@@ -33,21 +33,21 @@ Automatizar o fluxo de login do site da FastShop, garantindo:
 ## 📂 Estrutura do Projeto
 
 
+```
 cypress/
 ├── e2e/
-│ └── login.cy.js
+│   └── login.cy.js
 ├── fixtures/
 ├── support/
-│ ├── commands/
-│ │ └── LoginPage.js
-│ ├── elements/
-│ │ ├── LoginElements.js
-│ │ └── HomeElements.js
-│ └── e2e.js
-
+│   ├── commands/
+│   ├── elements/
+│   │   ├── LoginElements.js
+│   │   └── HomeElements.js
+│   ├── LoginPage.js
+│   └── e2e.js
 cypress.config.js
 package.json
-
+```
 
 ### 🧩 Padrão Arquitetural
 
