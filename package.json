@@ -1,19 +1,28 @@
 {
   "name": "e2e_fastshop",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automação E2E Fast Shop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run:regression": "cypress run --browser chrome",
+    "test:fast": "npm run allure:clear && npm run cy:run:regression && npm run allure:report"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cypress",
+    "fastshop",
+    "e2e",
+    "automation"
+  ],
+  "author": "Maximus Ponciano",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "dotenv": "^17.3.1"
   },
   "devDependencies": {
+    "allure-cypress": "^3.0.0",
+    "allure-commandline": "^2.30.0",
     "cypress": "^15.10.0"
   }
 }

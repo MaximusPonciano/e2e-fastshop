@@ -1,17 +1,24 @@
-// ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+import 'allure-cypress';
+// Importação dos comandos organizados por pasta (conforme seu padrão)
+import './commands/api_commands/productCommands'; 
+import './commands/pdpCommands';
 
-// Import commands.js using ES2015 syntax:
-import './commands/LoginPage'
+
+// Impede que o teste falhe por erros internos do site da Fast Shop
+Cypress.on('uncaught:exception', () => false);
+
+// Oculta overlays ou modais chatos antes do carregamento (como o de cookies)
+Cypress.on('window:before:load', (win) => {
+  cy.hideOverlays(win); 
+});
+
+before(() => {
+  // 1. Carrega a fixture de endereços
+  cy.fixture('addressData.json').then((addressData) => {
+
+    cy.setFastShopProducts({
+      query: 'iphone', 
+      zipCode: addressData[0].zipCode, 
+    });
+  });
+});
