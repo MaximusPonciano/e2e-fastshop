@@ -13,6 +13,7 @@ package-lock.json
 cypress/screenshots/
 cypress/videos/
 cypress/downloads/
+allure-results/
 
 # arquivos temporários do Cypress
 .cypress-cache/
