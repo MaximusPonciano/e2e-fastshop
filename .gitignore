@@ -14,6 +14,7 @@ cypress/screenshots/
 cypress/videos/
 cypress/downloads/
 allure-results/
+allure-report/
 
 # arquivos temporários do Cypress
 .cypress-cache/
