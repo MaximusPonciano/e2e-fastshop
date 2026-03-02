@@ -35,18 +35,19 @@ Automatizar o fluxo de login do site da FastShop, garantindo:
 
 ```
 cypress/
-├── e2e/
-│   └── login.cy.js
-├── fixtures/
+├── e2e/                     # Scripts de teste 
+│   ├── login.cy.js
+│   └── pdp.cy.js
+├── fixtures/                # Massas de dados estáticas 
+│   └── addressData.json
 ├── support/
-│   ├── commands/
-│   ├── elements/
-│   │   ├── LoginElements.js
-│   │   └── HomeElements.js
-│   ├── LoginPage.js
-│   └── e2e.js
-cypress.config.js
-package.json
+│   ├── commands/            # Comandos customizados reutilizáveis
+│   │   ├── api_commands/    # Requisições de API 
+│   │   └── ui_commands/     # Interações de Interface 
+│   ├── elements/            # Mapeamento de seletores 
+│   └── e2e.js               # Configurações globais e BeforeHooks
+cypress.config.js            # Configuração principal do Cypress
+package.json                 # Scripts e dependências do projeto
 ```
 
 ### 🧩 Padrão Arquitetural
@@ -84,9 +85,9 @@ Exemplo:
 
 
 ▶ Executando os Testes
-npx cypress open
+npm run cy:open
 
 Selecione o teste login.cy.js.
 
 ⚡ Modo headless (terminal)
-npx cypress run
+npm run test:fast
